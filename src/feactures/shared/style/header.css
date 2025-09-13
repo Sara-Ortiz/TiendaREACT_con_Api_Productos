@@ -1,0 +1,114 @@
+/* --- Variables de Color (Puedes ajustarlas a tu gusto) --- */
+:root {
+    --color-fondo: #F2F2F2;
+    --color-texto-oscuro: #333333;
+    --color-acento: #E5C9C9; /* Rosa pálido para acentos */
+    --color-burbuja-carrito: #e38686; /* Un color para la burbuja del carrito */
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    padding: 15px 20px; /* Reduce el padding */
+    gap: 15px; /* Agrega espacio entre los elementos apilados */
+  }
+
+  .main-nav {
+    flex-direction: column; /* Apila los enlaces de navegación */
+    width: 100%;
+    align-items: center; /* Centra los enlaces */
+    gap: 10px; /* Reduce el espacio entre los enlaces */
+  }
+}
+
+/* Media query para móviles aún más pequeños */
+@media (max-width: 480px) {
+  .logo a {
+    font-size: 2em; /* Reduce el tamaño del logo */
+  }
+
+  .header-icons {
+    gap: 15px; /* Reduce el espacio entre los iconos */
+  }
+}
+
+
+
+
+/* --- Estilos del Contenedor Principal del Header --- */
+.main-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 25px 50px;
+    background-color: var(--color-fondo);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Estilos del Logo "Piedra Viva" --- */
+.logo a {
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 2.5em; /* Ajusta el tamaño para que sea más grande */
+    font-weight: 700;
+    color: var(--color-texto-oscuro);
+    text-decoration: none; /* Elimina la línea de abajo */
+}
+
+/* --- Estilos del Menú de Navegación --- */
+.main-nav {
+    display: flex;
+    gap: 40px; 
+    list-style: none; /* Elimina los puntos al lado de los enlaces */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-texto-oscuro);
+    text-decoration: none; /* Elimina la línea de abajo */
+    transition: color 0.3s ease; 
+}
+
+.main-nav a:hover {
+    color: var(--color-acento); 
+}
+
+/* --- Estilos de los Íconos (Carrito, Búsqueda, Perfil) --- */
+.header-icons {
+    display: flex;
+    gap: 20px; 
+    align-items: center;
+}
+
+.icon-link {
+    font-size: 1.5em; /* Tamaño de los íconos */
+    color: var(--color-texto-oscuro);
+    text-decoration: none; /* Elimina la línea de abajo */
+    transition: color 0.3s ease;
+    position: relative; /* Es necesario para que la burbuja del carrito se posicione sobre el ícono */
+}
+
+.icon-link:hover {
+    color: var(--color-acento); 
+}
+
+/* --- Estilos del Contador de Productos en el Carrito --- */
+.cart-count {
+    position: absolute;
+    top: -8px; 
+    right: -8px; 
+    background-color: var(--color-burbuja-carrito); 
+    color: white;
+    font-size: 0.7em;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 2px 6px;
+    min-width: 15px;
+    text-align: center;
+    line-height: 1; 
+}
