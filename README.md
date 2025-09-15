@@ -3,6 +3,33 @@
 Proyecto React de tienda de comercio de joyas artesanales, enfocado en ofrecer una experiencia de compra fluida y visualmente atractiva, reflejando la belleza y singularidad de cada pieza.
 
 
+## 🚀 Guía de inicio rápido
+
+Sigue estos tres sencillos pasos para tener la aplicación en funcionamiento en tu entorno local.
+
+### 1. Clonar el repositorio
+    Abre tu terminal y ejecuta este comando para descargar el código del proyecto:
+
+git clone [https://github.com/Sara-Ortiz/TiendaREACT_con_Api_Productos.git]
+
+
+### 2. Navegar al directorio del proyecto:
+    Entra en la carpeta del proyecto recién clonada y ejecuta el siguiente comando para instalar todas las librerías necesarias
+
+cd [TiendaREACT_con_Api_Productos]
+npm install
+
+
+### 3. Iniciar la aplicación
+    Una vez que las dependencias estén instaladas, inicia el servidor de desarrollo:
+npm run dev
+o
+npm start
+
+
+
+
+
 ## ✨ Características
 
 * **Página de Inicio :** Una cálida bienvenida para los visitantes, presentándoles la esencia y los valores de nuestra marca de joyería.
