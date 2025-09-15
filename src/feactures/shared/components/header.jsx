@@ -19,6 +19,8 @@ const Header = ({ cartItems = [] }) => {
                 <ul className="main-nav">
                     <li><NavLink to="/">Inicio</NavLink></li>
                     <li><NavLink to="/coleccion">Colección</NavLink></li>
+                    <li><NavLink to="/contactenos">Contacténos</NavLink></li>
+
                 </ul>
                 
                 {/* ➡️ NUEVOS ÍCONOS Y CLASES PARA EL CONTENEDOR */}

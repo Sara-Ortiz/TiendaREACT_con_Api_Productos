@@ -126,6 +126,7 @@ import MainLayout from './feactures/shared/layouts/mainLayouts.jsx';
 import HomePage from './feactures/dashboard/pages/homePage.jsx';
 import ProductsPage from './feactures/products/productsPage.jsx';
 import CartPage from './feactures/cart/cartPage.jsx';
+import Contacto from './feactures/contacto/contacto.jsx';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -174,6 +175,7 @@ function App() {
               />
             } 
           />
+          <Route path="contactenos" element={<Contacto />} />
         </Route>
       </Routes>
     </div>
