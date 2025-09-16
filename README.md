@@ -27,6 +27,11 @@ o
 npm start
 
 
+<<<<<<< HEAD
+=======
+¡La aplicación debería abrirse correctamente!!
+
+>>>>>>> 2b58ad599dae0cddb401eaf8491e1479a227619b
 
 
 
