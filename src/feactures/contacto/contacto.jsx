@@ -1,28 +1,44 @@
-
-import React, { useState } from 'react'; // Importa useState
+import React, { useState, useRef } from 'react';
 import './contacto.css';
+import emailjs from '@emailjs/browser';
 
 const Contacto = () => {
-  // 1. Define el estado para controlar la visibilidad de la notificación
+  // Estado para controlar la visibilidad de la notificación
   const [showNotification, setShowNotification] = useState(false);
+  // Referencia para acceder a los elementos del formulario
+  const form = useRef();
 
   const handleSubmit = (event) => {
-    event.preventDefault(); 
+    // Evita que la página se recargue al enviar el formulario
+    event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
-    console.log('Datos del formulario:', data);
+    // Reemplaza con tus propias credenciales de EmailJS
+    const serviceID = 'service_91ipowr';
+    const templateID = 'template_usomnp8';
+    const publicKey = 'EFXqBVIAi_UjsUnqu';
 
-    // 2. Muestra la notificación al enviar el formulario
-    setShowNotification(true);
-
-    // 3. Oculta la notificación después de 3 segundos (el tiempo de tu animación)
-    setTimeout(() => {
-      setShowNotification(false);
-    }, 3000); 
-
-    // Opcional: limpiar el formulario
-    event.target.reset();
+    emailjs
+      .sendForm(serviceID, templateID, form.current, {
+        publicKey: publicKey,
+      })
+      .then(
+        () => {
+          console.log('¡Correo enviado con éxito!');
+          // Muestra la notificación de éxito
+          setShowNotification(true);
+          // Oculta la notificación después de 3 segundos y recarga la página
+          setTimeout(() => {
+            setShowNotification(false);
+            window.location.reload(); // Esta línea recarga la página
+          }, 3000);
+          // Limpia los campos del formulario
+          event.target.reset();
+        },
+        (error) => {
+          console.log('El envío del correo falló...', error.text);
+          // Aquí puedes manejar un error, por ejemplo, mostrando otra notificación
+        },
+      );
   };
 
   return (
@@ -30,13 +46,14 @@ const Contacto = () => {
       <h2>Contáctanos</h2>
       <p>Estamos aquí para ayudarte. Si tienes alguna pregunta sobre nuestros productos o necesitas asistencia, no dudes en escribirnos.</p>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
+      {/* Se enlaza la referencia al formulario */}
+      <form className="contact-form" onSubmit={handleSubmit} ref={form}>
         <div className="form-group">
           <label htmlFor="nombre">Nombre:</label>
           <input 
             type="text" 
             id="nombre" 
-            name="nombre" 
+            name="user_name" 
             placeholder="Tu nombre completo"
             required 
           />
@@ -47,7 +64,7 @@ const Contacto = () => {
           <input 
             type="email" 
             id="email" 
-            name="email" 
+            name="user_email" 
             placeholder="ejemplo@correo.com"
             required 
           />
@@ -57,7 +74,7 @@ const Contacto = () => {
           <label htmlFor="mensaje">Mensaje:</label>
           <textarea 
             id="mensaje" 
-            name="mensaje" 
+            name="message" 
             rows="5"
             placeholder="Escribe tu mensaje aquí..."
             required 
@@ -67,7 +84,7 @@ const Contacto = () => {
         <button type="submit" className="submit-button">Enviar Mensaje</button>
       </form>
 
-      {/* 4. Renderiza la notificación si el estado es true */}
+      {/* Renderiza la notificación si el estado es verdadero */}
       {showNotification && (
         <div className="notification-container">
           <p className="notification-message">¡Mensaje enviado con éxito!</p>
