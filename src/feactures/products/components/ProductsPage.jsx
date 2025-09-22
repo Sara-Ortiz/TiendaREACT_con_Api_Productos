@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './productsPage.css';
+import '../style/ProductsPage.css';
+import { getProducts } from '../service/apiService'; // Importa la función del servicio.
 
 const ProductsPage = ({ onAddToCart }) => {
     const [products, setProducts] = useState([]);
@@ -9,11 +10,8 @@ const ProductsPage = ({ onAddToCart }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('https://fakestoreapi.com/products');
-                if (!response.ok) {
-                    throw new Error('No se pudieron cargar los productos. Intenta nuevamente.');
-                }
-                const data = await response.json();
+                // Llama a la función del servicio para obtener los productos.
+                const data = await getProducts();
                 setProducts(data);
                 setIsLoading(false);
             } catch (err) {

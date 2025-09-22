@@ -64,7 +64,7 @@
 
 import React from 'react';
 
-import './cartPage.css';
+import '../style/cartPage.css';
 
 const CartPage = ({ cartItems = [], onAdd, onRemove }) => {
 

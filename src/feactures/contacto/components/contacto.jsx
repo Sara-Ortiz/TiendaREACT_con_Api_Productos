@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './contacto.css';
+import '../style/contacto.css';
 import emailjs from '@emailjs/browser';
 
 const Contacto = () => {

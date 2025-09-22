@@ -123,10 +123,11 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './feactures/shared/layouts/mainLayouts.jsx';
-import HomePage from './feactures/dashboard/pages/homePage.jsx';
-import ProductsPage from './feactures/products/productsPage.jsx';
-import CartPage from './feactures/cart/cartPage.jsx';
-import Contacto from './feactures/contacto/contacto.jsx';
+import HomePage from './feactures/dashboard/components/homePage.jsx';
+import ProductsPage from './feactures/products/components/productsPage.jsx';
+import CartPage from './feactures/cart/components/cartPage.jsx';
+import Contacto from './feactures/contacto/components/contacto.jsx';
+
 
 function App() {
   const [cart, setCart] = useState([]);

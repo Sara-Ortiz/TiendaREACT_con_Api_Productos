@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './homePage.css'
+import '../style/homePage.css'
 
 const HomePage = ( {cartItems} ) => {
   return (
