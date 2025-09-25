@@ -124,7 +124,7 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './features/shared/layouts/mainLayouts.jsx';
 import HomePage from './features/dashboard/components/homePage.jsx';
-import ProductsPage from './features/products/components/productsPage.jsx';
+import ProductsPage from './features/products/components/ProductsPage.jsx';
 import CartPage from './features/cart/components/cartPage.jsx';
 import Contacto from './features/contacto/components/contacto.jsx';
 
