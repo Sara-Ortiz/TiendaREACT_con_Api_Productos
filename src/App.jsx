@@ -122,11 +122,11 @@
 
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import MainLayout from './features/shared/layouts/mainLayouts.js';
-import HomePage from './features/dashboard/components/homePage.js';
-import ProductsPage from './features/products/components/productsPage.js';
-import CartPage from './features/cart/components/cartPage.js';
-import Contacto from './features/contacto/components/contacto.js';
+import MainLayout from './features/shared/layouts/mainLayouts.jsx';
+import HomePage from './features/dashboard/components/homePage.jsx';
+import ProductsPage from './features/products/components/productsPage.jsx';
+import CartPage from './features/cart/components/cartPage.jsx';
+import Contacto from './features/contacto/components/contacto.jsx';
 
 
 function App() {
